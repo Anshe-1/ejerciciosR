@@ -1,6 +1,5 @@
 #contraseña correcta 
-# Definir la contraseña correcta
-contraseña_correcta <- "miContraseña123"
+contraseña_correcta <- "123456789broni"
 
 intentos <- 0
 
