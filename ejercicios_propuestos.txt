@@ -105,7 +105,6 @@ while (intentos < max_intentos) {
 
 ejercicio 7-----------> CONTRASEÑA CORRECTA
 #contraseña correcta 
-# Definir la contraseña correcta
 contraseña_correcta <- "broni"
 
 intentos <- 0
@@ -114,7 +113,7 @@ while (intentos < 3) {
   contraseña_ingresada <- readline(prompt = "Ingresa la contraseña: ")
   
   if (contraseña_ingresada == contraseña_correcta) {
-    cat("¡Contraseña correcta! Acceso concedido.\n")
+    cat("Contraseña correcta Acceso concedido.\n")
     break 
   } else {
     intentos <- intentos + 1  
@@ -131,7 +130,6 @@ ejercicio 8-------------------->SUMA DE DIGITOS DE UN NUMERO
 # Pedir al usuario que ingrese un número
 numero <- as.integer(readline(prompt = "Ingresa un número: "))
 
-# Inicializar la suma y el número temporal
 suma <- 0
 temp <- abs(numero) 
 
