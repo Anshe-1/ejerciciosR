@@ -1,0 +1,178 @@
+ejercicio 1
+#Escribe un progrma que lea 10 numeros  y si es negativo positivo o 0
+
+for (i in 1:10) {
+  numeros[i] <- as.numeric(readline(prompt = paste("Introduce el número", i, ": ")))
+}
+
+for (i in 1:10) {
+  if (numeros[i] > 0) {
+    cat(numeros[i], "es positivo.\n")
+  } else if (numeros[i] < 0) {
+    cat(numeros[i], "es negativo.\n")
+  } else {
+    cat(numeros[i], "es cero.\n")
+  }
+}
+
+ejercicio 2-----> PARES O IMPARES
+for (i in 1:100) {
+  cat("numeros aleaotorio:\n")  # Generar un número aleatorio entre 1 y 100
+  numero_entero <- sample(1:100, 1)
+  
+  
+  if (numero_entero %% 2 == 0) {
+    print(paste("El número", numero_entero, "es par."))
+  } else {
+    print(paste("El número", numero_entero, "es impar."))
+  }
+}
+ejercicio 3------------>SUMA HASTA EL N NUMERO
+# suma de los numeros hasta el N numero 
+N <- as.integer(readline(prompt = "Ingresa un número N: "))
+
+# Inicializar la suma
+suma <- 0
+for (i in 1:N) {
+  suma <- suma + i
+}
+
+cat("La suma de los números desde 1 hasta", N, "es:", suma, "\n")
+
+
+
+ejercicio 4--------------> SECUENCIA FIBONACCI
+
+n <- 10
+a <- 0
+b <- 1
+
+contador <- 0
+
+cat("Secuencia de Fibonacci:\n")
+while (contador < n) {
+  cat(a, "\n")
+  siguiente <- a + b
+  a <- b
+  b <- siguiente
+  contador <- contador + 1
+}
+
+
+ejercicio 5 --------> N FACTORIAL
+#Numero factorial de un  n numero introducido por un usuario en un bucle for
+# Solicitar al usuario un número
+n <- as.integer(readline(prompt = "Introduce un número entero: "))
+
+factorial <- 1
+
+for (i in 1:n) {
+  factorial <- factorial * i
+}
+
+cat("El factorial de", n, "es:", factorial, "\n")
+
+
+
+ejercicio 6---------->ADIVINA EL NUMERO
+# Generar un número secreto entre 1 y 100
+numero_secreto <- sample(1:100, 1)
+intentos <- 0
+max_intentos <- 7
+
+cat("¡Bienvenido al juego de adivinanza!\n")
+cat("Tienes", max_intentos, "intentos para adivinar el número.\n")
+
+while (intentos < max_intentos) {
+  adivinanza <- as.integer(readline(prompt="Adivina el número (entre 1 y 100): "))
+  intentos <- intentos + 1
+  
+  if (adivinanza == numero_secreto) {
+    cat("¡Felicitaciones! Adivinaste el número en", intentos, "intentos.\n")
+    break
+  } else if (adivinanza > numero_secreto) {
+    cat("Es menor. Intenta de nuevo.\n")
+  } else {
+    cat("Es mayor. Intenta de nuevo.\n")
+  }
+  if (intentos >= max_intentos) {
+    cat("¡Lo siento! Se te acabaron los intentos. El número era", numero_secreto, ".\n")
+  }
+  
+}
+
+
+
+ejercicio 7-----------> CONTRASEÑA CORRECTA
+#contraseña correcta 
+# Definir la contraseña correcta
+contraseña_correcta <- "broni"
+
+intentos <- 0
+
+while (intentos < 3) {
+  contraseña_ingresada <- readline(prompt = "Ingresa la contraseña: ")
+  
+  if (contraseña_ingresada == contraseña_correcta) {
+    cat("¡Contraseña correcta! Acceso concedido.\n")
+    break 
+  } else {
+    intentos <- intentos + 1  
+    cat("Contraseña incorrecta. Te quedan", 3 - intentos, "intentos.\n")
+  }
+}
+
+if (intentos == 3) {
+  cat("Has agotado tus intentos. Acceso denegado.\n")
+}
+
+ejercicio 8-------------------->SUMA DE DIGITOS DE UN NUMERO
+
+# Pedir al usuario que ingrese un número
+numero <- as.integer(readline(prompt = "Ingresa un número: "))
+
+# Inicializar la suma y el número temporal
+suma <- 0
+temp <- abs(numero) 
+
+
+while (temp > 0) {
+  digito <- temp %% 10  
+  suma <- suma + digito  
+  temp <- temp %/% 10    
+}
+
+
+cat("La suma de los dígitos de", numero, "es:", suma, "\n") 
+
+
+
+ejercicio 9 -------------->SECUENCIA DE PATRONES
+filas <- as.integer(readline(prompt="Ingresa la cantidad de líneas: "))
+for (i in 1:filas) {
+  cat(rep("█", i),
+      "\n")
+}
+
+
+ejercicio 10-----------NUMEROS PRIMOS DE 1  AL 100
+# almacenar los números primos
+primos <- c()
+
+for (num in 2:100) {
+  es_primo <- TRUE  
+  
+
+  for (i in 2:sqrt(num)) {
+    if (num %% i == 0) {
+      es_primo <- FALSE  
+      break 
+    }
+  }
+  
+  if (es_primo) {
+    primos <- c(primos, num)
+  }
+}
+
+cat("Los números primos del 1 al 100 son:", primos, "\n")
