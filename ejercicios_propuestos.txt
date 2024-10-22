@@ -61,7 +61,7 @@ while (contador < n) {
 
 ejercicio 5 --------> N FACTORIAL
 #Numero factorial de un  n numero introducido por un usuario en un bucle for
-# Solicitar al usuario un número
+#  usuario un número
 n <- as.integer(readline(prompt = "Introduce un número entero: "))
 
 factorial <- 1
@@ -75,7 +75,7 @@ cat("El factorial de", n, "es:", factorial, "\n")
 
 
 ejercicio 6---------->ADIVINA EL NUMERO
-# Generar un número secreto entre 1 y 100
+# número secreto entre 1 y 100
 numero_secreto <- sample(1:100, 1)
 intentos <- 0
 max_intentos <- 7
